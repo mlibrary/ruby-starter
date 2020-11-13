@@ -3,10 +3,7 @@ ARG UNAME=app
 ARG UID=1000
 ARG GID=1000
 
-LABEL maintainer="mrio@umich.edu"
-
-#RUN apt-get update -yqq && apt-get install -yqq --no-install-recommends \
-#  apt-transport-https
+LABEL maintainer="uniqname@umich.edu"
 
 RUN gem install bundler:2.1.4
 

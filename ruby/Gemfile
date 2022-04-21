@@ -1,9 +1,10 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
 group :development, :test do
-  gem 'pry'
-  gem 'byebug'
-  gem 'rack-test'
-  gem 'rspec'
+  gem "pry"
+  gem "byebug"
+  gem "rack-test"
+  gem "rspec"
+  gem "simplecov"
+  gem "standard"
 end
-

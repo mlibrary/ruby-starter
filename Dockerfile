@@ -1,7 +1,9 @@
-ARG RUBY_VERSION=3.1
+ARG RUBY_VERSION=3.2
 FROM ruby:${RUBY_VERSION}
 
-ARG BUNDLER_VERSION=2.3
+# Last digit is needed to get bundler to install the latest.
+# Check https://rubygems.org/gems/bundler/versions for the latest version.
+ARG BUNDLER_VERSION=2.4.5 
 ARG UNAME=app
 ARG UID=1000
 ARG GID=1000

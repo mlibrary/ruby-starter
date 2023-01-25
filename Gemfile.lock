@@ -13,9 +13,9 @@ GEM
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    rack (2.2.3)
-    rack-test (1.1.0)
-      rack (>= 1.0, < 3)
+    pry-byebug (3.10.1)
+      byebug (~> 11.0)
+      pry (>= 0.13, < 0.15)
     rainbow (3.1.1)
     regexp_parser (2.3.0)
     rexml (3.2.5)
@@ -52,6 +52,7 @@ GEM
       simplecov-html (~> 0.11)
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
+    simplecov-lcov (0.8.0)
     simplecov_json_formatter (0.1.4)
     standard (1.10.0)
       rubocop (= 1.27.0)
@@ -62,11 +63,11 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  byebug
   pry
-  rack-test
+  pry-byebug
   rspec
   simplecov
+  simplecov-lcov
   standard
 
 BUNDLED WITH

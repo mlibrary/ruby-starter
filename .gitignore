@@ -3,3 +3,4 @@
 .irb_history
 .cache
 .bundle
+.env

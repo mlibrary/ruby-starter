@@ -2,7 +2,7 @@ if [ -f ".env" ]; then
   echo "🌎 .env exists. Leaving alone"
 else
   echo "🌎 .env does not exist. Copying .env-example to .env"
-  cp .env-example .env
+  cp env.example .env
 fi
 
 if [ -f ".git/hooks/pre-commit" ]; then
@@ -13,7 +13,7 @@ else
 fi
 
 echo "🚢 Build docker images"
-docker-compose build
+docker compose build
 
 echo "📦 Installing Gems"
-docker-compose run --rm app bundle
+docker compose run --rm app bundle

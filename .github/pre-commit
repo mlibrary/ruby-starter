@@ -6,12 +6,12 @@ rubyfiles=$(git diff --cached --name-only --diff-filter=ACM "*.rb" "Gemfile"  | 
 
 # Standardize all ruby files
 echo "🧹 Formatting staged Ruby files using standardrb ($(echo $rubyfiles | wc -w | awk '{print $1}') total)"
-echo "$rubyfiles" | xargs docker-compose run --rm web bundle exec standardrb --fix
+echo "$rubyfiles" | xargs docker compose run -T --rm app bundle exec standardrb --fix
 
 # Add back the modified/prettified files to staging
 echo "$rubyfiles" | xargs git add
 
-#echo "📋 Running tests with rspec"
-#docker-compose run --rm app bundle exec rspec --format progress
+echo "📋 Running tests with rspec"
+docker compose run -T --rm app bundle exec rspec --format progress
 
 exit 0

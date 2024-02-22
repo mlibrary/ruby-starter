@@ -3,6 +3,11 @@ if [ -f ".env" ]; then
 else
   echo "🌎 .env does not exist. Copying .env-example to .env"
   cp env.example .env
+  YOUR_UID=`id -u`
+  YOUR_GID=`id -g`
+  echo "🙂 Setting your UID ($YOUR_UID) and GID ($YOUR_UID) in .env"
+  sed -i s/YOUR_UID/$YOUR_UID/ .env
+  sed -i s/YOUR_GID/$YOUR_GID/ .env
 fi
 
 if [ -f ".git/hooks/pre-commit" ]; then
@@ -14,6 +19,3 @@ fi
 
 echo "🚢 Build docker images"
 docker compose build
-
-echo "📦 Installing Gems"
-docker compose run --rm app bundle

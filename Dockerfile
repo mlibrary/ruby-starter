@@ -1,4 +1,4 @@
-FROM ruby:3.2-slim-bookworm AS development
+FROM ruby:3.2 AS development
 
 # These build args are in your `.env` file, and they exist so that for
 # development the user in the container has the same UID and GID as you. 
@@ -26,11 +26,17 @@ USER app
 
 ENV BUNDLE_PATH /gems
 
+COPY --chown=${UID}:${GID} Gemfile* /app/
+
 WORKDIR /app
+
+# cache mount for bundle install so running bundle install won't reinstall
+# everything
+RUN --mount=type=cache,target=/gems/bundle,uid=${UID},gid=${GID} \
+  bundle install
 
 CMD ["tail", "-f", "/dev/null"]
 
 FROM development AS production
 
 COPY --chown=${UID}:${GID} . /app
-RUN bundle  install

@@ -11,11 +11,10 @@ Run the setup script
 
 This will:
 
-* copy `env.example` to `.env` 
+* copy `env.example` to `.env` and in the env file sets the UID and GID to your values.
 * enable the precommit hook which wil lint the code before committing.  Uncomment
   those lines in `.git/hooks/precommit` to enable running tests.
 * build the docker image
-* install the gems
 
 The script does not overwrite `.env` or `/git/hooks/precommit`.
 

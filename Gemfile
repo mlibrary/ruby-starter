@@ -1,16 +1,13 @@
 source "https://rubygems.org"
 
-group :development, :test do
+gem "marc"
+gem "rails"
+
+group :development do
   gem "pry"
   gem "pry-byebug"
-end
-
-group :test do
+  gem "standard"
   gem "rspec"
   gem "simplecov"
   gem "simplecov-lcov"
-end
-
-group :development do
-  gem "standard"
 end

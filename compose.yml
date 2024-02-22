@@ -3,6 +3,9 @@ services:
     build: 
       context: .
       target: development
+      args:
+        - UID=${UID}
+        - GID=${UID}
     volumes:
       - .:/app
       - gem_cache:/gems

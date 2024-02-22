@@ -1,5 +1,8 @@
 source "https://rubygems.org"
 
+gem "marc"
+gem "rails"
+
 group :development do
   gem "pry"
   gem "pry-byebug"

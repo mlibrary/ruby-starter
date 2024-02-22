@@ -1,4 +1,4 @@
-FROM ruby:3.2 AS development
+FROM ruby:3.2 AS base
 
 # These build args are in your `.env` file, and they exist so that for
 # development the user in the container has the same UID and GID as you. 
@@ -26,17 +26,21 @@ USER app
 
 ENV BUNDLE_PATH /gems
 
-COPY --chown=${UID}:${GID} Gemfile* /app/
-
 WORKDIR /app
+
+CMD ["tail", "-f", "/dev/null"]
+
+FROM base AS development
+
+COPY --chown=${UID}:${GID} Gemfile /app/
 
 # cache mount for bundle install so running bundle install won't reinstall
 # everything
 RUN --mount=type=cache,target=/gems/bundle,uid=${UID},gid=${GID} \
   bundle install
 
-CMD ["tail", "-f", "/dev/null"]
-
-FROM development AS production
+FROM base AS production
 
 COPY --chown=${UID}:${GID} . /app
+
+RUN bundle install

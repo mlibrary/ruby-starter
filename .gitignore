@@ -8,6 +8,8 @@
 .vscode-server
 .ssh
 .gitconfig
+.local
+.dotnet
 
 .env
 vendor/

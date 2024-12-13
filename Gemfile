@@ -13,4 +13,5 @@ end
 
 group :development do
   gem "standard"
+  gem "ruby-lsp"
 end

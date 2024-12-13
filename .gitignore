@@ -3,5 +3,11 @@
 .irb_history
 .cache
 .bundle
+
+.ruby-lsp
+.vscode-server
+.ssh
+.gitconfig
+
 .env
 vendor/

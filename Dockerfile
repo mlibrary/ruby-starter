@@ -9,7 +9,8 @@ ARG GID=1000
 
 RUN apt-get update -yqq && apt-get install -yqq --no-install-recommends \
   build-essential \
-  libtool
+  libtool \
+  libyaml-dev
 
 
 RUN groupadd -g ${GID} -o app

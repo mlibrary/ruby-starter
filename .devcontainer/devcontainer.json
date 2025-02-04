@@ -1,0 +1,21 @@
+{
+  "name": "Existing Docker Compose (Extend)",
+  "dockerComposeFile": [
+    "../compose.yml"
+  ],
+  "service": "app",
+  "workspaceFolder": "/app",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/sshd:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "shopify.ruby-extensions-pack",
+        "testdouble.vscode-standard-ruby"
+      ]
+    }
+  }
+}

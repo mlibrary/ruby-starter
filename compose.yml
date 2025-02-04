@@ -3,11 +3,11 @@ services:
     build: 
       context: .
       target: development
+      args:
+        UID: ${UID:-1000}
+        GID: ${GID:-1000}
     volumes:
       - .:/app
-      - gem_cache:/gems
     env_file:
       - .env
         
-volumes:
-  gem_cache:

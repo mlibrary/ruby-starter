@@ -1,6 +1,16 @@
 .bash_history
 .idea
 .irb_history
+.rdbg_history
 .cache
 .bundle
+
+.ruby-lsp
+.vscode-server
+.ssh
+.gitconfig
+.local
+.dotnet
+
 .env
+vendor/
